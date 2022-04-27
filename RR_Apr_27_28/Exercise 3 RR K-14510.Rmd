@@ -1,0 +1,19 @@
+---
+title: "Exercice 3"
+author: "Alexandre Guérin K-14510"
+date: '2022-04-27'
+output:
+  word_document: default
+  html_document: default
+---
+```{r}
+#Exercice 3 : 
+library(stringr)
+library(readxl)
+CountryUS_f <- read_excel("C:/Users/alexd/Downloads/CountryUS_f.xls")
+View(CountryUS_f)
+
+c("CountryUs_f")
+CountryUS_f["Nom de l'État"] %>% str_to_lower()
+CountryUS_f["Nom de l'État"] %>% str_to_upper()
+```
