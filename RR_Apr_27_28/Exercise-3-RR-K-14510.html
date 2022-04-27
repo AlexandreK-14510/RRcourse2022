@@ -386,7 +386,12 @@ c(&quot;CountryUs_f&quot;)</code></pre>
 <pre><code>## Warning in stri_trans_toupper(string, locale = locale): argument is not an
 ## atomic vector; coercing</code></pre>
 <pre><code>## [1] &quot;C(\&quot;ALABAMA\&quot;, \&quot;ALASKA\&quot;, \&quot;ARIZONA\&quot;, \&quot;ARKANSAS\&quot;, \&quot;CALIFORNIE\&quot;, \&quot;COLORADO\&quot;, \&quot;CONNECTICUT\&quot;, \&quot;DELAWARE\&quot;, \&quot;DISTRICT FÉDÉRAL DE COLUMBIA\&quot;, \&quot;FLORIDE\&quot;, \&quot;GÉORGIE\&quot;, \&quot;HAWAÏ\&quot;, \&quot;IDAHO\&quot;, \&quot;ILLINOIS\&quot;, \&quot;INDIANA\&quot;, \&quot;IOWA\&quot;, \&quot;KANSAS\&quot;, \&quot;KENTUCKY\&quot;, \&quot;LOUISIANE\&quot;, \&quot;MAINE\&quot;, \&quot;MARYLAND\&quot;, \&quot;MASSACHUSETTS\&quot;, \&quot;MICHIGAN\&quot;, \&quot;MINNESOTA\&quot;, \&quot;MISSISSIPPI\&quot;, \&quot;MISSOURI\&quot;, \&quot;MONTANA\&quot;, \&quot;NEBRASKA\&quot;, \&quot;NEVADA\&quot;, \&quot;NEW HAMPSHIRE\&quot;, \&quot;NEW JERSEY\&quot;, \&quot;NOUVEAU-MEXIQUE\&quot;, \&quot;NEW YORK\&quot;, \&quot;CAROLINE DU NORD\&quot;, \&quot;DAKOTA DU NORD\&quot;, \&quot;OHIO\&quot;, \&quot;OKLAHOMA\&quot;, \&quot;ORÉGON\&quot;, \&quot;PENNSYLVANIE\&quot;, \n\&quot;RHODE ISLAND\&quot;, \&quot;CAROLINE DU SUD\&quot;, \&quot;DAKOTA DU SUD\&quot;, \&quot;TENNESSEE\&quot;, \&quot;TEXAS\&quot;, \&quot;UTAH\&quot;, \&quot;VERMONT\&quot;, \&quot;VIRGINIE\&quot;, \&quot;WASHINGTON\&quot;, \&quot;VIRGINIE-OCCIDENTALE\&quot;, \&quot;WISCONSIN\&quot;, \&quot;WYOMING\&quot;)&quot;</code></pre>
-<pre class="r"><code>writeLines(c(&quot;CountryUs_f&quot;), &quot;output.txt&quot;)</code></pre>
+<pre class="r"><code>writeLines(c(CountryUS_f[&quot;Nom de l&#39;État&quot;] %&gt;% str_to_lower()), &quot;output1.txt&quot;)</code></pre>
+<pre><code>## Warning in stri_trans_tolower(string, locale = locale): argument is not an
+## atomic vector; coercing</code></pre>
+<pre class="r"><code>writeLines(c(CountryUS_f[&quot;Nom de l&#39;État&quot;] %&gt;% str_to_upper()), &quot;output2.txt&quot;)</code></pre>
+<pre><code>## Warning in stri_trans_toupper(string, locale = locale): argument is not an
+## atomic vector; coercing</code></pre>
 
 
 
