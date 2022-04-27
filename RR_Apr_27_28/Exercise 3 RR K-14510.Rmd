@@ -3,8 +3,8 @@ title: "Exercice 3"
 author: "Alexandre Guérin K-14510"
 date: '2022-04-27'
 output:
-  word_document: default
   html_document: default
+  word_document: default
 ---
 ```{r}
 #Exercice 3 : 
@@ -16,4 +16,6 @@ View(CountryUS_f)
 c("CountryUs_f")
 CountryUS_f["Nom de l'État"] %>% str_to_lower()
 CountryUS_f["Nom de l'État"] %>% str_to_upper()
+writeLines(c(CountryUS_f["Nom de l'État"] %>% str_to_lower()), "output1.txt")
+writeLines(c(CountryUS_f["Nom de l'État"] %>% str_to_upper()), "output2.txt")
 ```

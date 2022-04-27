@@ -1,0 +1,75 @@
+---
+title: "Exercice 1 and 2"
+author: "Alexandre Guérin K-14510"
+date: '2022-04-23'
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#Exercise 1 
+for (x in 1:100){
+  
+  #If x is a multiplier of both 3 and 5 print 'Fizzbuz'
+  #If x is a multiplier of 3 print 'Fizz'
+  #If x is a multiplier of 5 print 'Buzz'
+  
+if(x%%3 == 0 & x%%5 == 0) {print('FizzBuzz')}
+else if(x%%3 == 0) {print('Fizz')}
+else if (x%%5 == 0){print('Buzz')}
+  
+else {print(x)}}
+
+```
+
+```{r}
+#Exercice 2 : 1)
+#In this function i is in the interval 10 to 20. 
+#When i [10,14] --> print 8 (the largest Fibonacci number smaller than i)
+#When i [14,20] --> print 13 (the largest Fibonacci number smaller than i)
+new.function <- function(){
+  
+  for(i in 10:13)
+    print(8)
+  for(i in 13:20)
+    print(13)
+     
+}
+# Call the function
+new.function()
+```
+
+```{r}
+#Exercice 2: 2) 
+
+# We choose a digit integer number and print the reverse of the number.
+
+digit<-1737
+rev_num<-0
+while(digit>0){
+  rev_num=rev_num*10 + digit %% 10
+ digit=floor(digit / 10)
+}
+print(paste(rev_num))
+
+#This function reverses a string by characters
+reverse_chars <- function(x)
+{
+  string_split = strsplit(as.character(x), split = "")
+  reversed_split = string_split[[1]][nchar(x):1]
+  paste(reversed_split, collapse = "")
+} 
+reverse_chars(1234)
+```
+
+
+
+
+
