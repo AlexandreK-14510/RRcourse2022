@@ -1,0 +1,23 @@
+---
+title: "Exercise Fahrenheit to Celsius"
+author: "Alexandre Guérin K-14510"
+date: '2022-05-04'
+output: html_document
+---
+
+
+```{r}
+tocelsius <- function(f, target='c'){
+  if (target == 'c')return ((f - 32)/1.8)
+}
+tocelsius(50,target = 'c')
+tocelsius(70,target = 'c')
+tocelsius(90,target = 'c')
+testthat::test_that('tocelsius', {
+    testthat::expect_equal(tocelsius(50, target='c'), 10, tolerance = 1e-5)
+    testthat::expect_equal(tocelsius(70, target='c'), 21.11111, tolerance = 1e-5)
+    testthat::expect_equal(tocelsius(90, target='c'),32.22222, tolerance= 1e-5)
+})
+
+```
+
