@@ -19,5 +19,9 @@ testthat::test_that('tocelsius', {
     testthat::expect_equal(tocelsius(90, target='c'),32.22222, tolerance= 1e-5)
 })
 
+toKelvin <- function(f, taget='c'){
+  
+}
+
 ```
 
