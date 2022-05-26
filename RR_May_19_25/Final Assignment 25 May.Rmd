@@ -1,0 +1,68 @@
+---
+title: "Final Assignment"
+author: "Alexandre Guérin K-14510"
+date: '2022-05-26'
+output:   
+  html_document:
+    theme: united
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(meta)
+library(metafor)
+library(dplyr)
+library(readxl)
+metaanalysis_data <- read_excel("RR/RRcourse2022/RR_May_19_25/data/metaanalysis_data.xlsx")
+
+```
+
+
+```{r}
+library(readxl)
+metaanalysis_data <- read_excel("RR/RRcourse2022/RR_May_19_25/data/metaanalysis_data.xlsx")
+metaanalysis_data[1:10,]
+```
+
+```{r}
+m <- metagen(TE= N_boys,
+             seTE =Mean_boys_play_male,
+             data=metaanalysis_data,
+             studlab=paste(Study),
+             comb.fixed = TRUE,
+             comb.random = FALSE)
+m
+```
+
+```{r}
+m_re <- metagen(TE=N_boys,
+             seTE=Mean_boys_play_male,
+             data=metaanalysis_data,
+             studlab=paste(Study),
+             comb.fixed = FALSE,
+             comb.random = TRUE)
+m_re
+```
+
+
+```{r}
+m.raw <- metacont(n.e=N_boys,
+                    mean.e=Mean_boys_play_male,
+                    sd.e=SD_boys_play_male,
+                    n.c=N_girls,
+                    mean.c=Mean_girls_play_female,
+                    sd.c=SD_girls_play_female,
+                    data=metaanalysis_data,
+                    studlab=paste(Study),
+                    comb.fixed = TRUE,
+                    comb.random = TRUE,
+)
+m.raw
+```
+
+
+```{r}
+m %>% forest(sortvar=TE)
+```
